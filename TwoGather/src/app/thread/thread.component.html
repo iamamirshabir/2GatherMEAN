@@ -1,0 +1,45 @@
+<div class="container"
+     fxLayout="row"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+  <div fxFlex="40">
+
+    <div *ngIf="thread">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h3>{{thread.postbody}}</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src={{thread.profile}} alt={{thread.username}} />
+        <mat-card-content>
+          <p>
+            {{thread.username}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+
+
+  </div>
+  <div fxFlex="40">
+    <mat-list *ngIf="thread">
+      <h3>Comments</h3>
+      <mat-list-item *ngFor="let comment of thread.comments">
+        <h4 matLine>{{comment.comment}}</h4>
+        <p matLine>{{comment.rating}}  Stars</p>
+        <p matLine>
+          <span> -- {{comment.author}} {{comment.date}}</span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

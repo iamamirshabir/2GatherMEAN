@@ -1,0 +1,13 @@
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+ <mat-list fxFlex>
+   <mat-list-item *ngFor="let thread of threads">
+     <img matListAvatar src={{thread.profile}} alt={{thread.username}}>
+     <h1 matLine>{{thread.username}}</h1>
+     <p matLine>
+       <span>{{thread.postbody}}</span>
+     </p>
+     <button mat-button (click)="onSelect(thread)" >Open</button>
+   </mat-list-item>
+ </mat-list>
+</div>
+<app-thread [thread]="selectedThread"></app-thread>

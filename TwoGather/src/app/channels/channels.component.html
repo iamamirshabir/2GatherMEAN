@@ -1,0 +1,18 @@
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+  <div fxFlex>
+    <div>
+      <h3>Channels</h3>
+    </div>
+  </div>
+  <div fxFlex>
+    <mat-grid-list cols="3" rowHeight="200px">
+      <mat-grid-tile *ngFor="let channel of channels">
+        <img height="200" src={{channel.logo}} alt={{channel.title}} />
+        <mat-grid-tile-footer>
+          <h1>{{channel.title}}</h1>
+         
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
